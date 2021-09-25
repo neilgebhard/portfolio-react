@@ -57,7 +57,7 @@ const Contact = () => {
       </p>
       <form className={styles.form}>
         <div>
-          <label for="full-name">Full Name</label>
+          <label htmlFor="full-name">Full Name</label>
           <input
             id="full-name"
             type="text"
@@ -70,7 +70,7 @@ const Contact = () => {
         </div>
 
         <div>
-          <label for="email">Email address</label>
+          <label htmlFor="email">Email address</label>
           <input
             id="email"
             type="email"
@@ -82,7 +82,7 @@ const Contact = () => {
           />
         </div>
         <div>
-          <label for="company">Company</label>
+          <label htmlFor="company">Company</label>
           <input
             id="company"
             type="text"
@@ -94,7 +94,7 @@ const Contact = () => {
           />
         </div>
         <div>
-          <label for="message">Message</label>
+          <label htmlFor="message">Message</label>
           <textarea
             id="message"
             type="text"
@@ -109,7 +109,11 @@ const Contact = () => {
         <button type="submit" className={styles.button}>
           Send me a message!
         </button>
-        <p className={styles["success-message"]}>Your message has been sent!</p>
+        {onSuccess && (
+          <p className={styles["success-message"]}>
+            Your message has been sent!
+          </p>
+        )}
       </form>
     </section>
   );
