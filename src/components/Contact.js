@@ -5,9 +5,16 @@ const Contact = () => {
     <section className={styles.section} id="contact">
       <h1 className={styles.heading}>Contact me!</h1>
       <p>
-        Looking to get hired! Based in Saipan, but open to remote work and/or relocation.
+        Looking to get hired! Based in Saipan, but open to remote work and/or
+        relocation.
       </p>
-      <form className={styles.form} name="contact" method="post" netlify>
+      <form
+        className={styles.form}
+        name="contact"
+        method="POST"
+        action="/contact/?success=true"
+        data-netlify="true"
+      >
         <input type="hidden" name="contact-form" value="contact" />
         <div>
           <label for="full-name">Full Name</label>
