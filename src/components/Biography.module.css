@@ -1,0 +1,41 @@
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.column-left {
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+  gap: 5rem;
+  list-style: none;
+}
+
+.column-center {
+  max-width: 40rem;
+}
+
+.column-center img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.column-right {
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  list-style: none;
+  text-align: right;
+}
+
+.subtext-big {
+    font-size: 6rem;
+  }
+  
+.emote {
+  font-size: 1rem;
+}
