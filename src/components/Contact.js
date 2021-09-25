@@ -1,21 +1,54 @@
+import { useState } from "react";
 import styles from "./Contact.module.css";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [message, setMessage] = useState("");
+
+  const nameChangeHandler = (e) => {
+    setName(e.target.value);
+  };
+
+  const emailChangeHandler = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const companyChangeHandler = (e) => {
+    setCompany(e.target.value);
+  };
+
+  const messageChangeHandler = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", name, email, company, message }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+  };
+
   return (
-    <section className={styles.section} id="contact">
+    <section className={styles.section} onSubmit={handleSubmit}>
       <h1 className={styles.heading}>Contact me!</h1>
       <p>
         Looking to get hired! Based in Saipan, but open to remote work and/or
         relocation.
       </p>
-      <form
-        className={styles.form}
-        name="contact"
-        method="POST"
-        action="/contact/?success=true"
-        data-netlify="true"
-      >
-        <input type="hidden" name="contact-form" value="contact" />
+      <form className={styles.form}>
         <div>
           <label for="full-name">Full Name</label>
           <input
@@ -23,6 +56,8 @@ const Contact = () => {
             type="text"
             placeholder="Your Name"
             name="full-name"
+            value={name}
+            onChange={nameChangeHandler}
             required
           />
         </div>
@@ -34,6 +69,8 @@ const Contact = () => {
             type="email"
             placeholder="you@example.com"
             name="email"
+            value={email}
+            onChange={emailChangeHandler}
             required
           />
         </div>
@@ -44,6 +81,8 @@ const Contact = () => {
             type="text"
             name="company"
             placeholder="Your company"
+            value={company}
+            onChange={companyChangeHandler}
             required
           />
         </div>
@@ -55,10 +94,14 @@ const Contact = () => {
             name="message"
             placeholder="I would like to talk you about.."
             rows="5"
+            value={message}
+            onChange={messageChangeHandler}
             required
           />
         </div>
-        <button className={styles.button}>Send me a message!</button>
+        <button type="submit" className={styles.button}>
+          Send me a message!
+        </button>
       </form>
     </section>
   );
