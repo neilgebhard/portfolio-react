@@ -8,6 +8,7 @@ const encode = (data) => {
 };
 
 const Contact = () => {
+  const [onSuccess, setOnSuccess] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
@@ -37,7 +38,13 @@ const Contact = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", name, email, company, message }),
     })
-      .then(() => alert("Success!"))
+      .then(() => {
+        setName("");
+        setEmail("");
+        setCompany("");
+        setMessage("");
+        setOnSuccess(true);
+      })
       .catch((error) => alert(error));
   };
 
@@ -102,6 +109,7 @@ const Contact = () => {
         <button type="submit" className={styles.button}>
           Send me a message!
         </button>
+        <p className={styles["success-message"]}>Your message has been sent!</p>
       </form>
     </section>
   );

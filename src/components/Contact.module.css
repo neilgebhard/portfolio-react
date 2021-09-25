@@ -78,3 +78,8 @@
 .button:hover {
   background-color: #2d52ab;
 }
+
+.success-message {
+  color: green;
+  margin-top: 1rem;
+}
