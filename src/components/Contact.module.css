@@ -47,7 +47,7 @@
   margin-bottom: 1.5rem;
 }
 
-.form input::placeholder {
+.form input::placeholder, textarea::placeholder {
   color: #aaa;
 }
 
