@@ -7,7 +7,8 @@ const Contact = () => {
       <p>
         Looking to get hired! Based in Saipan, but open to remote work and/or relocation.
       </p>
-      <form className={styles.form} name="contact-me" method="post" netlify>
+      <form className={styles.form} name="contact" method="post" netlify>
+        <input type="hidden" name="contact-form" value="contact" />
         <div>
           <label for="full-name">Full Name</label>
           <input
