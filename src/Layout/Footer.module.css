@@ -1,6 +1,6 @@
 .section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10rem 3rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 3rem 5rem;
 }

@@ -1,23 +1,14 @@
-.heading {
+.flex {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  font-size: 5rem;
-  margin: 3rem 1rem 7rem 1rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  align-items: center;
   list-style: none;
-  font-size: 3rem;
-  padding: 3rem;
+  font-size: 2rem;
+  padding: 0 3rem 0 3rem;
+  gap: 3rem;
 }
 
-.grid a {
+.flex a {
   display: flex;
   justify-content: center;
   align-items: center;

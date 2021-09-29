@@ -1,5 +1,6 @@
 import GithubIcon from "../assets/GithubIcon";
 import LinkedInIcon from "../assets/LinkedInIcon";
+import MailIcon from "../assets/MailIcon";
 import Pulse from "react-reveal/Pulse";
 import styles from "./Header.module.css";
 
@@ -8,8 +9,16 @@ const Header = (props) => {
     props.portfolioRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const educationClickHandler = () => {
+    props.educationRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   const experienceClickHandler = () => {
     props.experienceRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const contactClickHandler = () => {
+    props.contactRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -17,28 +26,39 @@ const Header = (props) => {
       <nav className={styles.nav}>
         <ul className={styles.links}>
           <li className={styles.link} onClick={portfolioClickHandler}>
-            <a>PORTFOLIO</a>
+            <button className={styles.button}>PORTFOLIO</button>
+          </li>
+          <li className={styles.link} onClick={educationClickHandler}>
+            <button className={styles.button}>EDUCATION</button>
           </li>
           <li className={styles.link} onClick={experienceClickHandler}>
-            <a>EXPERIENCE</a>
+            <button className={styles.button}>EXPERIENCE</button>
+          </li>
+          <li className={styles.link} onClick={contactClickHandler}>
+            <button className={styles.button}>CONTACT</button>
           </li>
         </ul>
-        <div className={styles.name}>
-          <div>
-            <strong>NEIL</strong>
-          </div>
-          <div>
-            <strong>GEBHARD</strong>
-          </div>
-        </div>
         <ul className={`${styles.links} ${styles["flex-end"]}`}>
           <li className={styles.link}>
-            <a href="https://github.com/neilgebhard">
+            <a href="mailto:neilgebhard@gmail.com">
+              <MailIcon height="32" />
+            </a>
+          </li>
+          <li className={styles.link}>
+            <a
+              href="https://github.com/neilgebhard"
+              target="_blank"
+              rel="noreferrer"
+            >
               <GithubIcon height="32" />
             </a>
           </li>
           <li className={styles.link}>
-            <a href="https://www.linkedin.com/in/neilgebhard/">
+            <a
+              href="https://www.linkedin.com/in/neilgebhard/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <LinkedInIcon height="32" />
             </a>
           </li>

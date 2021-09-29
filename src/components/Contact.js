@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import styles from "./Contact.module.css";
 
 const encode = (data) => {
@@ -7,7 +7,7 @@ const encode = (data) => {
     .join("&");
 };
 
-const Contact = () => {
+const Contact = forwardRef((props, ref) => {
   const [onSuccess, setOnSuccess] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -49,8 +49,8 @@ const Contact = () => {
   };
 
   return (
-    <section className={styles.section} onSubmit={handleSubmit}>
-      <h1 className={styles.heading}>Contact me!</h1>
+    <section className={styles.section} onSubmit={handleSubmit} ref={ref}>
+      <h1 className="heading">Contact me!</h1>
       <p>
         Looking to get hired! Based in Saipan, but open to remote work and/or
         relocation.
@@ -117,6 +117,6 @@ const Contact = () => {
       </form>
     </section>
   );
-};
+});
 
 export default Contact;

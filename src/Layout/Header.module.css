@@ -1,23 +1,33 @@
 .nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 3rem;
-    font-weight: 600;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3rem;
+  font-weight: 600;
 }
 
 .links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
 }
 
 .flex-end {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
-.name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.button {
+  transition: all 0.3s;
+  color: inherit;
+  background: none;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #3867d6;
 }

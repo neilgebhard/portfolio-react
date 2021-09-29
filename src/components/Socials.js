@@ -6,16 +6,29 @@ import styles from "./Socials.module.css";
 const Socials = () => {
   return (
     <div>
-      <div className={styles.heading}>Links</div>
-      <ul className={styles.grid}>
+      <ul className={styles.flex}>
         <li>
-          <a href="mailto:neilgebhard@gmail.com"><MailIcon height={40} /> Email</a>
+          <a href="mailto:neilgebhard@gmail.com">
+            <MailIcon height={30} /> Email
+          </a>
         </li>
         <li>
-          <a href="https://github.com/neilgebhard"><GithubIcon height={40} /> Github</a>
+          <a
+            href="https://github.com/neilgebhard"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GithubIcon height={30} /> Github
+          </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/neilgebhard/"><LinkedInIcon height={40} /> LinkedIn</a>
+          <a
+            href="https://www.linkedin.com/in/neilgebhard/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LinkedInIcon height={30} /> LinkedIn
+          </a>
         </li>
       </ul>
     </div>
